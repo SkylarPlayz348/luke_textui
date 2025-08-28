@@ -14,7 +14,8 @@ module.exports = {
 			svelte: path.dirname(require.resolve('svelte/package.json'))
 		},
 		extensions: ['.mjs', '.js', '.ts', '.svelte'],
-		mainFields: ['svelte', 'browser', 'module', 'main']
+		mainFields: ['svelte', 'browser', 'module', 'main'],
+		conditionNames: ["svelte"],
 	},
 	output: {
 		path: path.join(__dirname, '/public'),
@@ -38,7 +39,7 @@ module.exports = {
 						},
 						emitCss: prod,
 						hotReload: !prod,
-							preprocess: sveltePreprocess({ sourceMap: !prod })
+						preprocess: sveltePreprocess({ sourceMap: !prod })
 					}
 				}
 			},
